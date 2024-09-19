@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOOB</title>
+
+    <style>
+        #meowButton {
+            font-size: 200px; /* Increase text size */
+            padding: 300px 495px; /* Increase padding to make it bigger */
+            border-radius: 20px; /* Optional: Rounded corners */
+            background-color: green; /* Optional: Button background color */
+            color: white; /* Optional: Button text color */
+            border: none; /* Optional: Remove border */
+            cursor: pointer; /* Optional: Change cursor to pointer */
+        }
+
+        #meowButton:hover {
+            background-color: green; /* Optional: Change color on hover */
+        }
+    </style>
+    
+</head>
+
+<body>
+    
+
+    <button id="meowButton">Meow</button> <!-- Meow button -->
+    
+
+    <audio id="m1" src="Meow Sound Effect.mp3"></audio> 
+    <audio id="m2" src="Cat Meow - Minecraft Sound Effect (HD).mp3"></audio> 
+    <audio id="m3" src="Fart sound effect.mp3"></audio> 
+
+
+    <script>
+        let message = "Hello world";
+        const button = document.getElementById("meowButton");
+        const meowSound = document.getElementById("meowSound");
+        const m1 = document.getElementById("m1");
+        const m2 = document.getElementById("m2");
+        const m3 = document.getElementById("m3");
+
+        if(button && m1 && m2 && m3) {
+            button.addEventListener("click", () => {
+                console.log(message);
+
+                let randomNumber = Math.floor(Math.random() * 3);
+                
+                if(randomNumber === 0) {
+                    m1.play(); // Play the first sound
+                } else if(randomNumber === 1) {
+                    m2.play(); // Play the second sound
+                } else if(randomNumber === 2) {
+                    m3.play(); // Play the third sound
+                }
+            });
+        }
+    </script>
+</body>
+</html>
