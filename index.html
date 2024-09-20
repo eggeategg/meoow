@@ -6,35 +6,44 @@
     <title>GOOB</title>
 
     <style>
-        /* Center the button using flexbox */
+        
+        /* Center the button and gif using flexbox */
         body {
             display: flex;
+            flex-direction: column; /* Stack elements vertically */
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
             height: 100vh; /* Full height of the viewport */
             margin: 0;
-            background-color: #f0f0f0; /* Optional: Background color for the body */
+            background-color: #7644c3;
         }
 
         #meowButton {
             font-size: 200px; /* Increase text size */
             padding: 100px 200px; /* Increase padding to make it bigger */
             border-radius: 20px; /* Optional: Rounded corners */
-            background-color: green; /* Optional: Button background color */
+            background-color: black; /* Optional: Button background color */
             color: white; /* Optional: Button text color */
             border: none; /* Optional: Remove border */
             cursor: pointer; /* Optional: Change cursor to pointer */
         }
 
         #meowButton:hover {
-            background-color: darkgreen; /* Optional: Change color on hover */
+            background-color: black; /* Optional: Change color on hover */
         }
+
+        #catGif {
+            max-width: 100%; /* Optional: Responsive scaling */
+            height: auto; /* Optional: Maintain aspect ratio */
+            margin-bottom: 20px; /* Space between the gif and button */
+        }
+
     </style>
     
 </head>
 
 <body>
-    
+    <IMG id="catGif" SRC="chipi-chipi-chapa-chapa.gif">
 
     <button id="meowButton">Meow</button> <!-- Meow button -->
     
@@ -42,6 +51,7 @@
     <audio id="m1" src="Meow Sound Effect.mp3"></audio> 
     <audio id="m2" src="Cat Meow - Minecraft Sound Effect (HD).mp3"></audio> 
     <audio id="m3" src="Fart sound effect.mp3"></audio> 
+    
 
 
     <script>
@@ -56,15 +66,26 @@
             button.addEventListener("click", () => {
                 console.log(message);
 
-                let randomNumber = Math.floor(Math.random() * 3);
+                let randomNumber = Math.floor(Math.random() * 2);
                 
                 if(randomNumber === 0) {
-                    m1.play(); // Play the first sound
+                    
+                    m1.play();
+                    catGif.src ="/sus-cat-2-suspicious-cat.gif";
+                    m3.play();
+                     
                 } else if(randomNumber === 1) {
+                    
                     m2.play(); // Play the second sound
-                } else if(randomNumber === 2) {
-                    m3.play(); // Play the third sound
-                }
+                    catGif.src ="/sus-cat-2-suspicious-cat.gif"; 
+                    m3.play();
+                   
+                } 
+
+                setTimeout(() => {
+                catGif.src = "chipi-chipi-chapa-chapa.gif"; // Change back to original gif
+            }, 1500); // 2000 milliseconds = 2 seconds
+
             });
         }
     </script>
